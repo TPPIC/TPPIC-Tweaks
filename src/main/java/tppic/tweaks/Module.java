@@ -1,15 +1,20 @@
 package tppic.tweaks;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by McKeever on 02-Nov-16.
  */
 public abstract class Module {
 
-    public abstract String setModuleID();
+    public boolean isEnabled;
+    public List<Tweak> TWEAKS = new ArrayList<Tweak>();
 
-    public abstract String setTweakModID();
+    protected abstract String setModuleID();
+
+    protected abstract String setTweakModID();
 
     public Collection<String> getDependencies() {
         return null;
@@ -28,5 +33,10 @@ public abstract class Module {
     public abstract void init();
 
     public abstract void postInit();
+
+    public Tweak makeSimpleTweak(Module module, String id) {
+        Tweak tweak = new SimpleTweak(module, id);
+        return tweak;
+    }
 
 }

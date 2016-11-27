@@ -9,6 +9,13 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
+repositories {
+    maven {// JEI
+        name = "prog"
+        url = "http://dvs1.progwml6.com/files/maven"
+    }
+}
+
 version = "1.10.2-1.0.0"
 
 def ENV = System.getenv()
@@ -31,7 +38,7 @@ minecraft {
 }
 
 dependencies {
-
+	deobfCompile "mezz.jei:jei_1.10.2:+"
 }
 
 processResources
