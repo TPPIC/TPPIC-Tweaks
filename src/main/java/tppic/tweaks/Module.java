@@ -1,16 +1,11 @@
 package tppic.tweaks;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by McKeever on 02-Nov-16.
  */
 public abstract class Module {
-
-    public boolean isEnabled;
-    public List<Tweak> TWEAKS = new ArrayList<Tweak>();
 
     protected abstract String setModuleID();
 

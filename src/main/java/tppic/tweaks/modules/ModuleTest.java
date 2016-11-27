@@ -12,13 +12,13 @@ import java.util.Collection;
 /**
  * Created by McKeever on 26-Nov-16.
  */
-public class ModuleRefinedStorage extends Module {
+public class ModuleTest extends Module {
 
     public Tweak TEST_TWEAK = new SimpleTweak(this, "TestTweak");
 
     @Override
     protected String setModuleID() {
-        return "RefinedStorageTweaks";
+        return "TestModule";
     }
 
     @Override
@@ -31,7 +31,11 @@ public class ModuleRefinedStorage extends Module {
         return null;
        /* return new ArrayList<String>() {
             {
-                add("refinedstorage");
+                add("dep1");
+                add("dep2");
+                add("dep3");
+                add("dep4");
+                add("etc.");
             }
         };*/
     }
@@ -44,16 +48,15 @@ public class ModuleRefinedStorage extends Module {
         TEST_TWEAK.removeRecipes(new ItemStack(Items.GOLDEN_CHESTPLATE));
         TEST_TWEAK.disableItem(new ItemStack(Items.ACACIA_BOAT));
         TEST_TWEAK.hideItem(new ItemStack(Items.DARK_OAK_DOOR));
-        TWEAKS.add(TEST_TWEAK);
+        TEST_TWEAK.addOreDict(new ItemStack(Items.IRON_AXE), "axeIron");
+        TEST_TWEAK.addOreDict(new ItemStack(Items.IRON_PICKAXE), "pickIron", "pickaxeIron");
     }
 
     @Override
     public void init() {
-        System.out.println("DAMN SON I INITTED");
     }
 
     @Override
     public void postInit() {
-        System.out.println("much post init many wow");
     }
 }

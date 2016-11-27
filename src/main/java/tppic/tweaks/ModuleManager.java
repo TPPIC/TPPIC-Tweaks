@@ -1,7 +1,7 @@
 package tppic.tweaks;
 
 import net.minecraftforge.fml.common.Loader;
-import tppic.tweaks.modules.ModuleRefinedStorage;
+import tppic.tweaks.modules.ModuleTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class ModuleManager {
     private static List<Module> REGISTRY = new ArrayList<Module>();
 
     public static void registerModules() {
-        register(new ModuleRefinedStorage());
+        register(new ModuleTest());
     }
 
     private static void register(Module module) {

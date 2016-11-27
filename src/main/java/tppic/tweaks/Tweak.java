@@ -7,8 +7,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import tppic.tweaks.registry.Tooltip;
 import tppic.tweaks.registry.TPPICTooltipHandler;
+import tppic.tweaks.registry.Tooltip;
 
 import java.util.Iterator;
 import java.util.List;
@@ -17,8 +17,6 @@ import java.util.List;
  * Created by McKeever on 27-Nov-16.
  */
 public abstract class Tweak {
-
-    public boolean isEnabled;
 
     public static void addShapedRecipe(ItemStack output, Object... params) {
         GameRegistry.addRecipe(new ShapedOreRecipe(output, params));
