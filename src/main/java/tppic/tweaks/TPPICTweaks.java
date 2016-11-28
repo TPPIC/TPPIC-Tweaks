@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tppic.tweaks.lib.ModuleManager;
 import tppic.tweaks.registry.TPPICTooltipHandler;
 
 import java.util.ArrayList;
@@ -28,16 +29,16 @@ public class TPPICTweaks {
         ModuleManager.registerModules();
         MinecraftForge.EVENT_BUS.register(new TPPICTooltipHandler());
 
-        ModuleManager.preInitModules();
+        ModuleManager.preInitModules(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        ModuleManager.initModules();
+        ModuleManager.initModules(event);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        ModuleManager.postInitModules();
+        ModuleManager.postInitModules(event);
     }
 }

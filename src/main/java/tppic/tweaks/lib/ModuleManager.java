@@ -1,7 +1,10 @@
-package tppic.tweaks;
+package tppic.tweaks.lib;
 
 import net.minecraftforge.fml.common.Loader;
-import tppic.tweaks.modules.ModuleTest;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tppic.tweaks.modules.test.ModuleTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,21 +37,21 @@ public class ModuleManager {
         REGISTRY.add(module);
     }
 
-    public static void preInitModules() {
+    public static void preInitModules(FMLPreInitializationEvent event) {
         for (Module i : REGISTRY) {
-            i.preInit();
+            i.preInit(event);
         }
     }
 
-    public static void initModules() {
+    public static void initModules(FMLInitializationEvent event) {
         for (Module i : REGISTRY) {
-            i.init();
+            i.init(event);
         }
     }
 
-    public static void postInitModules() {
+    public static void postInitModules(FMLPostInitializationEvent event) {
         for (Module i : REGISTRY) {
-            i.postInit();
+            i.postInit(event);
         }
     }
 

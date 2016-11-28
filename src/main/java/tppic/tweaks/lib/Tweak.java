@@ -1,15 +1,20 @@
-package tppic.tweaks;
+package tppic.tweaks.lib;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import tppic.tweaks.TPPICTweaks;
 import tppic.tweaks.registry.TPPICTooltipHandler;
 import tppic.tweaks.registry.Tooltip;
 
+import javax.annotation.Nonnull;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,6 +22,20 @@ import java.util.List;
  * Created by McKeever on 27-Nov-16.
  */
 public abstract class Tweak {
+
+    public boolean isEnabled;
+    public boolean enabledDefault;
+    public Module module;
+    public String id;
+    public String desc;
+
+    public Tweak(@Nonnull Module module, @Nonnull String id, boolean isEnabledByDefault, @Nonnull String desc) {
+        enabledDefault = isEnabledByDefault;
+        this.module = module;
+        this.id = id;
+        this.desc = desc;
+
+    }
 
     public static void addShapedRecipe(ItemStack output, Object... params) {
         GameRegistry.addRecipe(new ShapedOreRecipe(output, params));
@@ -61,21 +80,23 @@ public abstract class Tweak {
         TPPICTooltipHandler.REGISTRY.add(new Tooltip(tooltip, itemStacks));
     }
 
-    public abstract String setTweakID();
-
-    public abstract Module setModule();
-
     public final String getName() {
-        if (setModule() == null || setTweakID() == null) {
-            System.out.println("Warning: Tweak ID or Tweak Module is null");
-            return null;
-        }
-        return setModule().getName() + "." + setTweakID().toLowerCase();
+        return module.getName() + "." + id.toLowerCase();
     }
 
-    public abstract void preInit();
+    public final String getDesc() {
+        return desc;
+    }
 
-    public abstract void init();
+    public void preInit(FMLPreInitializationEvent event) {
 
-    public abstract void postInit();
+    }
+
+    public void init(FMLInitializationEvent event) {
+
+    }
+
+    public void postInit(FMLPostInitializationEvent event) {
+
+    }
 }
