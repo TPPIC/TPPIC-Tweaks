@@ -13,3 +13,7 @@ There is three ways you can make use of TPPIC-Tweaks.
 3) Request a new tweak to be added to TPPIC-Tweaks.
 
 If you want to request a new tweak to be added, please open an issue requesting the tweak and describing it with detail. Please do not request items, blocks, entities, or any actual content. If the tweak is quite complicated and/or is *very* specific to your modpack only, the request may be denied.
+
+## Built-in Tweaks
+
+* None
