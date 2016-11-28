@@ -4,7 +4,7 @@ TPPIC-Tweaks is a tweak mod that modpacks can use to change things about mods to
 TPPIC-Tweaks is not just limited to TPPIC modpacks. Any modpack can use TPPIC-Tweaks, and enable/disable tweaks relevent to their modpack.
 
 ## Modpack Authors
-There is three ways you can make use of TPPIC-Tweaks.
+There are three ways you can make use of TPPIC-Tweaks.
 
 1) Use the mod as-is, and adjust the configs to your liking for your modpack.
 
@@ -12,7 +12,7 @@ There is three ways you can make use of TPPIC-Tweaks.
 
 3) Request a new tweak to be added to TPPIC-Tweaks.
 
-If you want to request a new tweak to be added, please open an issue requesting the tweak and describing it with detail. Please do not request items, blocks, entities, or any actual content. If the tweak is quite complicated and/or is *very* specific to your modpack only, the request may be denied.
+If you want to request a new tweak to be added, please open an issue requesting the tweak and describing it with detail. Please do not request items, blocks, entities, or any actual content. If the tweak is quite complicated and/or *very* specific to your modpack, the request may be denied.
 
 ## Built-in Tweaks
 
